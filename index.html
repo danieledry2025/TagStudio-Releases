@@ -3,42 +3,116 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="TagStudio ל־Windows מזהה שירים ומעדכנת תגיות ותמונות אמן.">
-  <title>TagStudio — ספריית המוזיקה שלך</title>
+  <meta name="theme-color" content="#fbfafb">
+  <meta name="description" content="הורידו את TagStudio ל־Windows כדי לזהות שירים ורמיקסים, לערוך פרטים ועטיפות ולשמור עותק מסודר של תיקיות המוזיקה שלכם.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:title" content="TagStudio | ספריית המוזיקה שלך">
+  <meta property="og:description" content="זיהוי שירים ורמיקסים, עריכת פרטים ועטיפות ושמירת ספרייה מסודרת ב־Windows.">
+  <meta property="og:image" content="https://danieledry2025.github.io/TagStudio-Releases/assets/home.webp">
+  <title>TagStudio | הורדה ל־Windows</title>
+  <link rel="icon" href="assets/tagstudio.ico" sizes="any">
+  <link rel="apple-touch-icon" href="assets/tagstudio.png">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="wrap top">
-    <a class="brand" href="./" lang="en" dir="ltr"><span aria-hidden="true">♪</span> TagStudio</a>
-    <a href="#install">הוראות התקנה</a>
+  <a class="skip" href="#main">דילוג לתוכן</a>
+  <header class="site-header">
+    <div class="wrap navbar">
+      <a class="brand" href="./" aria-label="TagStudio, עמוד הבית">
+        <img src="assets/tagstudio.png" width="36" height="36" alt="">
+        <bdi lang="en">TagStudio</bdi>
+      </a>
+      <nav aria-label="ניווט ראשי">
+        <a href="#preview">בתוך התוכנה</a>
+        <a href="#install">התקנה</a>
+        <a href="https://github.com/danieledry2025/TagStudio-Releases" lang="en" dir="ltr">GitHub</a>
+      </nav>
+    </div>
   </header>
-  <main class="wrap">
-    <section class="hero">
-      <div>
-        <h1>סדר חדש בספריית המוזיקה שלך.</h1>
-        <p>בחרו תיקייה וקבלו את שם השיר, המבצע ותמונת האמן כשנמצאה. לפני השמירה תוכלו לבדוק מאיפה הגיע כל זיהוי ולבחור אם לעבוד על עותקים.</p>
-        <a class="download" href="https://github.com/danieledry2025/TagStudio-Releases/releases/latest/download/TagStudio-Setup-x64.exe">הורדה ל־Windows</a>
-        <small>64 ביט · ההתקנה דורשת אינטרנט</small>
+  <main id="main" class="wrap">
+    <section class="hero" aria-labelledby="intro">
+      <div class="hero-art"><img src="assets/vinyl.webp" width="1983" height="793" alt="" fetchpriority="high"></div>
+      <div class="hero-copy">
+        <h1 id="intro">ספריית המוזיקה<br> שלך.</h1>
+        <p>זהו שירים ורמיקסים, ערכו את הפרטים והעטיפות, ושמרו עותק מסודר של תיקיות המוזיקה שלכם.</p>
+        <a class="download" href="https://github.com/danieledry2025/TagStudio-Releases/releases/latest/download/TagStudio-Setup-x64.exe">
+          <span aria-hidden="true" class="download-icon"></span>
+          <span>הורדה ל־<bdi lang="en">Windows</bdi></span>
+        </a>
+        <div class="version">גרסה <bdi>1.6.0</bdi><span aria-hidden="true"> · </span><bdi lang="en">Windows</bdi> בגרסת 64 ביט</div>
       </div>
-      <div class="preview" aria-hidden="true">
-        <div class="disc"><i></i></div>
-        <div class="record">
-          <strong>שם השיר והאמן</strong>
-          <span>זיהוי אודיו ואימות בקטלוג</span>
+    </section>
+    <section class="preview" id="preview" aria-labelledby="preview-title">
+      <div class="section-bar">
+        <h2 id="preview-title">בתוך התוכנה</h2>
+        <div class="view-switch" hidden aria-label="בחירת מסך לתצוגה" role="tablist">
+          <button type="button" id="tab-library" aria-controls="view-library" aria-selected="true" role="tab">ספריית השירים</button>
+          <button type="button" id="tab-editor" aria-controls="view-editor" aria-selected="false" role="tab" tabindex="-1">עריכת שיר</button>
+          <button type="button" id="tab-home" aria-controls="view-home" aria-selected="false" role="tab" tabindex="-1">מסך הבית</button>
         </div>
       </div>
+      <figure class="product-view" id="view-library">
+        <div class="stage"><img src="assets/library.webp" alt="ספריית השירים של TagStudio עם תיקיות, עטיפות, חיפוש וסינון" width="1120" height="780"></div>
+        <figcaption>כל תיקייה מופיעה בשמה. חיפוש, מיון וסינון עוזרים להגיע לשיר או לגרסת הרמיקס הרצויה.</figcaption>
+      </figure>
+      <figure class="product-view editor-view" id="view-editor">
+        <div class="stage"><img src="assets/editor.webp" alt="חלון עריכת שיר ובו שדות לשם, למבצע ולאלבום וכפתור לבחירת עטיפה" width="549" height="505" loading="lazy"></div>
+        <figcaption>בחרו שיר ולחצו על ״עריכת שיר״ כדי לעדכן שם, מבצע, אלבום, שנה, סגנון או עטיפה מהמחשב.</figcaption>
+      </figure>
+      <figure class="product-view" id="view-home">
+        <div class="stage"><img src="assets/home.webp" alt="מסך הבית בעברית, עם הדרכה וכפתור להוספת תיקיית מוזיקה" width="1120" height="780" loading="lazy"></div>
+        <figcaption>מסך הבית מרכז את ההוראות ופותח את התיקייה הראשונה. לחיצה על הלוגו מחזירה אליו.</figcaption>
+      </figure>
     </section>
-    <section id="install" class="steps" aria-labelledby="install-title">
-      <h2 id="install-title">מההורדה לסריקה הראשונה</h2>
-      <ol>
-        <li><h3>מתקינים</h3><p>מורידים ופותחים את <bdi>TagStudio-Setup-x64.exe</bdi>.</p></li>
-        <li><h3>מזהים שירים</h3><p>מוסיפים או גוררים תיקיות לחלון. לאחר שהקבצים מופיעים לוחצים על זיהוי שירים. אפשר להתחיל מיד בלי חשבון או מפתח. לבדיקת שיר בודד אפשר לבחור אותו וללחוץ על ״בדיקת שיר ב־Shazam״, באמצעות התוסף הרשמי בדפדפן.</p></li>
-        <li><h3>בודקים ושומרים</h3><p>לחצו פעמיים על שיר כדי לבדוק את המקורות. במסנן ״שיר מקור אפשרי״ אפשר לעבור על רמיקסים שהגרסה שלהם עדיין ממתינה לאימות. בלשונית ״תמונה״ אפשר לבחור מבצע ולחפש תצלום גם כשהזיהוי ממתין לאישור. כדי לשמור עותקים בחרו ״שמירת ספרייה״ ואז ״שכפול״.</p></li>
+    <section class="install" id="install" aria-labelledby="install-title">
+      <h2 id="install-title">מההתקנה לשיר הראשון</h2>
+      <ol class="steps">
+        <li><h3>פותחים את המתקין</h3><p>הורידו את <bdi lang="en">TagStudio-Setup-x64.exe</bdi> ופתחו אותו במחשב Windows של 64 ביט.</p></li>
+        <li><h3>מוסיפים תיקיית מוזיקה</h3><p>גררו תיקייה לחלון או בחרו אותה ממסך הבית. אחרי הסריקה לחצו על ״זיהוי שירים״ לחיפוש בקטלוגים.</p></li>
+        <li><h3>עורכים ושומרים עותק</h3><p>אפשר לערוך שיר ידנית או לשמור את כל הפרטים המוכנים יחד. בחרו ״שמירת ספרייה״ ותיקיית יעד לעותק המעודכן.</p></li>
       </ol>
-      <p class="update"><strong>סריקה חוזרת</strong> · התוצאות נשמרות במחשב. שירים שכבר נבדקו מוצגים מההיסטוריה, ואפשר לבחור שירים לבדיקה חוזרת או לחיפוש תמונה.</p>
-      <p class="update"><strong>עדכוני גרסה</strong> · האפליקציה בודקת עדכונים בפתיחה. אפשר גם ללחוץ על <b>בדיקת עדכונים</b> בכל עת.</p>
+      <details>
+        <summary>עוד על הזיהוי ועל עדכוני גרסה</summary>
+        <p>לחיצה כפולה על שיר מציגה את מקורות הזיהוי. במסנן ״שיר מקור אפשרי״ אפשר לבדוק רמיקסים, ובלשונית ״תמונה״ אפשר לחפש תצלום לפי מבצע. בדיקה ידנית ב־Shazam משתמשת בתוסף הרשמי בדפדפן.</p>
+        <p>היסטוריית הזיהוי נשמרת במחשב. אפשר לבחור שירים לבדיקה חוזרת. בפתיחת התוכנה נבדקות גרסאות חדשות, וגם בתפריט ״פעולות והגדרות״ אפשר לבחור ״בדיקת עדכונים״.</p>
+      </details>
     </section>
   </main>
-  <footer class="wrap foot"><span>נבנה על ידי דניאל אדרי</span><a href="https://github.com/danieledry2025/TagStudio-Releases/releases">כל הגרסאות</a></footer>
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>פיתוח דניאל אדרי</span>
+      <a href="https://github.com/danieledry2025/TagStudio-Releases/releases">כל הגרסאות ב־GitHub</a>
+    </div>
+  </footer>
+  <script>
+    const switcher = document.querySelector('.view-switch');
+    const tabs = [...switcher.querySelectorAll('[role="tab"]')];
+    function showTab(selected, moveFocus = false) {
+      for (const tab of tabs) {
+        const chosen = tab === selected;
+        const view = document.getElementById(tab.getAttribute('aria-controls'));
+        tab.setAttribute('aria-selected', String(chosen));
+        tab.tabIndex = chosen ? 0 : -1;
+        view.hidden = !chosen;
+        view.setAttribute('role', 'tabpanel');
+        view.setAttribute('aria-labelledby', tab.id);
+        view.tabIndex = 0;
+      }
+      if (moveFocus) selected.focus();
+    }
+    for (const [i, tab] of tabs.entries()) {
+      tab.addEventListener('click', () => showTab(tab));
+      tab.addEventListener('keydown', event => {
+        const targets = { ArrowLeft: (i + 1) % tabs.length, ArrowRight: (i + tabs.length - 1) % tabs.length, Home: 0, End: tabs.length - 1 };
+        if (Object.hasOwn(targets, event.key)) {
+          event.preventDefault();
+          showTab(tabs[targets[event.key]], true);
+        }
+      });
+    }
+    showTab(tabs[0]);
+    switcher.hidden = false;
+  </script>
 </body>
 </html>
